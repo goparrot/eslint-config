@@ -1,0 +1,14 @@
+node_modules
+.history
+.idea
+package-lock.json
+.env
+.out
+!/bin
+/dist/
+dump.rdb
+.DS_Store
+tsconfig.tsbuildinfo
+dist/
+.bit/
+report.*.json

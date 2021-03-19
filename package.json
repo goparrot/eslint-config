@@ -1,0 +1,38 @@
+{
+  "name": "@goparrot/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared eslint configuration",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 7",
+    "prettier": "^2.0.5"
+  },
+  "devDependencies": {
+    "eslint": "7.7.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-import-resolver-typescript": "2.2.1",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "prettier": "^2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goparrot/eslint.git"
+  },
+  "keywords": [
+    "eslint",
+    "prettier",
+    "editorconfig"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goparrot/eslint/issues"
+  },
+  "homepage": "https://github.com/goparrot/eslint#readme"
+}
