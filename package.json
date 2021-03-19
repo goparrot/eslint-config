@@ -1,38 +1,106 @@
 {
-  "name": "@goparrot/eslint-config",
-  "version": "1.0.0",
-  "description": "Shared eslint configuration",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "peerDependencies": {
-    "eslint": ">= 7",
-    "prettier": "^2.0.5"
-  },
-  "devDependencies": {
-    "eslint": "7.7.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-import-resolver-typescript": "2.2.1",
-    "eslint-plugin-import": "2.22.0",
-    "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-react-hooks": "2.5.0",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
-    "@typescript-eslint/parser": "^3.9.0",
-    "prettier": "^2.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goparrot/eslint.git"
-  },
-  "keywords": [
-    "eslint",
-    "prettier",
-    "editorconfig"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goparrot/eslint/issues"
-  },
-  "homepage": "https://github.com/goparrot/eslint#readme"
+    "name": "@goparrot/eslint-config",
+    "version": "1.0.0",
+    "description": "GoParrot shared eslint configuration",
+    "author": "GoParrot Inc.",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/goparrot/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/goparrot/eslint-config/issues"
+    },
+    "homepage": "https://github.com/goparrot/eslint-config#readme",
+    "keywords": [
+        "eslint",
+        "prettier"
+    ],
+    "main": "src/index.ts",
+    "lint-staged": {
+        "*.{ts,tsx,json,js,jsx}": [
+            "npm run format:base"
+        ],
+        "*.{md}": [
+            "npm run prettier:base"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "standard-version": {
+        "scripts": {
+            "postchangelog": "npm run remark"
+        }
+    },
+    "scripts": {
+        "commit": "git-cz",
+        "prepare": "husky install",
+        "prettier": "npm run prettier:base -- '**/**.+(md)'",
+        "prettier:base": "prettier --ignore-path .eslintignore --write",
+        "format": "npm run prettier && npm run lint -- --fix",
+        "format:base": "npm run lint:base -- --fix",
+        "format:staged": "git add . && lint-staged --allow-empty -q",
+        "lint": "npm run lint:base -- './**/**.{ts,tsx,js,json}'",
+        "lint:base": "npm run lint:config:check && eslint",
+        "lint:config:check": "eslint-config-prettier src/index.ts",
+        "build": "rimraf dist/* && tsc -b tsconfig.build.json && ts-node -T bin/prepublish.ts",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "remark": "remark README.md CHANGELOG.md CONTRIBUTING.md CODE_OF_CONDUCT.md .github/ -o -f -q && git add .",
+        "pre-commit": "git add . && run-p remark typecheck build && run-p format:staged && run-p lint",
+        "prepublishOnly": "echo \"use 'npm run release:dev' or 'npm run version' and make PR to master branch, CD/CI will do the rest of the work\" && exit 1",
+        "publish": "npm run build && npm publish dist",
+        "version": "standard-version --no-verify --skip.tag && git push origin && git push",
+        "version:dev": "standard-version --no-verify --prerelease dev --skip.changelog --skip.tag --skip.commit",
+        "release:local": "npm run build && yalc publish dist --push",
+        "release:dev": "npm run version:dev && npm run publish -- --tag dev",
+        "release:dev:dry": "npm run release:dev -- --dry-run",
+        "github-release": "conventional-github-releaser -p angular"
+    },
+    "peerDependencies": {
+        "eslint-plugin-react": "^7.0.0",
+        "eslint-plugin-react-hooks": "^4.0.0",
+        "typescript": "^4.0.0"
+    },
+    "peerDependenciesMeta": {
+        "eslint-plugin-react": {
+            "optional": true
+        },
+        "eslint-plugin-react-hooks": {
+            "optional": true
+        }
+    },
+    "dependencies": {
+        "@typescript-eslint/parser": "^4.0.0",
+        "@typescript-eslint/eslint-plugin": "^4.0.0",
+        "eslint": "^7.0.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-import-resolver-typescript": "^2.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "prettier": "^2.0.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^12.1.1",
+        "@commitlint/config-conventional": "^12.1.1",
+        "@types/node": "^14.14.41",
+        "commitizen": "^4.2.3",
+        "conventional-github-releaser": "^3.1.5",
+        "eslint-plugin-react": "^7.23.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^6.0.0",
+        "lint-staged": "^10.5.4",
+        "npm-run-all": "^4.1.5",
+        "remark-cli": "^9.0.0",
+        "remark-frontmatter": "^3.0.0",
+        "remark-github": "^10.0.1",
+        "remark-lint-emphasis-marker": "^2.0.1",
+        "remark-lint-strong-marker": "^2.0.1",
+        "rimraf": "^3.0.2",
+        "standard-version": "^9.2.0",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4"
+    }
 }
