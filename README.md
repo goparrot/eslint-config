@@ -21,14 +21,14 @@ Installed libraries out of the box:
 
 ```javascript
 module.exports = {
-    extends: ['@goparrot/eslint-config/recommended'],
-    parserOptions: {
-        project: './tsconfig.eslint.json',
-    },
-    rules: {
-        // rules to override.
-    },
-}
+  extends: ["@goparrot/eslint-config/recommended"],
+  parserOptions: {
+    project: "./tsconfig.eslint.json",
+  },
+  rules: {
+    // rules to override.
+  },
+};
 ```
 
 You should create the `tsconfig.eslint.json` in your project.
@@ -83,8 +83,8 @@ test-reports
     "format:staged": "git add . && lint-staged --allow-empty -q",
     "lint": "npm run lint:base -- './**/**.{ts,tsx,js,jsx,json}'",
     "lint:base": "npm run lint:config:check && eslint",
-    "lint:config:check": "eslint-config-prettier src/index.ts",    
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint:config:check": "eslint-config-prettier src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   }
 }
 ```
