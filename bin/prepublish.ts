@@ -12,9 +12,16 @@ async function run(): Promise<void> {
     console.log({ from, to });
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { scripts, devDependencies, husky, files, 'lint-staged': lintStaged, directories, config, ...packageJson } = JSON.parse(
-        fs.readFileSync(path.join(process.cwd(), `./${from}/package.json`)).toString(),
-    );
+    const {
+        scripts,
+        devDependencies,
+        husky,
+        files,
+        'lint-staged': lintStaged,
+        directories,
+        config,
+        ...packageJson
+    } = JSON.parse(fs.readFileSync(path.join(process.cwd(), `./${from}/package.json`)).toString());
 
     packageJson.main = './index.js';
     packageJson.typings = './index.d.ts';
