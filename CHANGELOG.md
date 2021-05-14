@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/goparrot/eslint-config/compare/v1.0.0...v1.0.1) (2021-05-14)
+
+### Bug Fixes
+
+*   exclude broken eslint-plugin-import version ([d665a5b](https://github.com/goparrot/eslint-config/commit/d665a5bfd1c7c9b819076984217ff4db345d7375))
+
 ## 1.0.0 (2021-04-26)
 
 ### Features
