@@ -78,7 +78,7 @@
         "eslint": "^7.0.0",
         "eslint-config-prettier": "^8.0.0",
         "eslint-import-resolver-typescript": "^2.0.0",
-        "eslint-plugin-import": "^2.0.0",
+        "eslint-plugin-import": ">2.0.0 <2.23.0 || ^2.23.1",
         "eslint-plugin-prettier": "^3.0.0",
         "prettier": "^2.0.0"
     },
