@@ -1,6 +1,6 @@
 export = {
     extends: ['plugin:react/recommended'],
-    plugins: ['react-hooks'],
+    plugins: ['react-hooks', '@strdr4605/react-props-destructuring'],
     rules: {
         'react/prop-types': 'off',
         'react/display-name': 'off',
@@ -12,5 +12,6 @@ export = {
                 props: 'never',
             },
         ],
+        '@strdr4605/react-props-destructuring/no-multiline': 'warn',
     },
 };
