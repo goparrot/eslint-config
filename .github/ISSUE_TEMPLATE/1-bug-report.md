@@ -1,4 +1,4 @@
----
+***
 
 name: 🐞 Bug Report
 about: Report a reproducible bug
@@ -6,7 +6,7 @@ title: ""
 labels: ""
 assignees: ""
 
----
+***
 
 <!-- Click "Preview" for a more readable version --
 
@@ -38,9 +38,9 @@ Please read and follow the instructions before submitting an issue:
 
 ## Environment:
 
-- Node version: x.y.z
-- NPM Version: x.y.z
-- `@goparrot/eslint-config` Version: x.y.z
+*   Node version: x.y.z
+*   NPM Version: x.y.z
+*   `@goparrot/eslint-config` Version: x.y.z
 
 ## Additional context/Screenshots
 
