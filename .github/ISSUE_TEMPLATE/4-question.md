@@ -1,6 +1,12 @@
-***
+---
 
-## name: 🤔 Question&#xA;about: Get help&#xA;title: 'question: '&#xA;labels: question&#xA;assignees: ''
+name: 🤔 Question
+about: Get help
+title: "question: "
+labels: question
+assignees: ""
+
+---
 
 <!-- Click "Preview" for a more readable version --
 
@@ -15,9 +21,9 @@ Please read and follow the instructions before submitting an issue:
 
 ## Environment:
 
-*   Node version: x.y.z
-*   NPM Version: x.y.z
-*   `@goparrot/eslint-config` Version: x.y.z
+- Node version: x.y.z
+- NPM Version: x.y.z
+- `@goparrot/eslint-config` Version: x.y.z
 
 ## Describe the issue
 

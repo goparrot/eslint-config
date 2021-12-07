@@ -21,7 +21,8 @@
         "removeComments": false,
         "noImplicitAny": false,
         "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true
     },
     "include": ["src", "bin"]
 }
