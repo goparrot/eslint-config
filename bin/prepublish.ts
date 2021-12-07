@@ -8,8 +8,13 @@ interface IPrepublishArgs {
 }
 
 async function run(): Promise<void> {
-    const { from = '.', to = './dist' } = parseArgs<IPrepublishArgs>(process.argv.slice(2));
-    console.log({ from, to });
+    const {
+        from = '.',
+        to = './dist',
+        main = './cjs/index.js',
+        typings = './types/index.d.ts',
+    } = parseArgs<{ from: string; to: string; main: string; typings: string }>(process.argv.slice(2));
+    console.log({ from, to, main, typings });
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {
@@ -22,6 +27,7 @@ async function run(): Promise<void> {
         config,
         ...packageJson
     } = JSON.parse(fs.readFileSync(path.join(process.cwd(), `./${from}/package.json`)).toString());
+    delete packageJson.engines.npm;
 
     packageJson.main = './index.js';
     packageJson.typings = './index.d.ts';

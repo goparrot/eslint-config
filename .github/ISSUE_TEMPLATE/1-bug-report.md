@@ -1,6 +1,12 @@
 ***
 
-## name: 🐞 Bug Report&#xA;about: Report a reproducible bug&#xA;title: ''&#xA;labels: ''&#xA;assignees: ''
+name: 🐞 Bug Report
+about: Report a reproducible bug
+title: ""
+labels: ""
+assignees: ""
+
+***
 
 <!-- Click "Preview" for a more readable version --
 

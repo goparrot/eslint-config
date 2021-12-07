@@ -1,6 +1,12 @@
 ***
 
-## name: 🤔 Question&#xA;about: Get help&#xA;title: 'question: '&#xA;labels: question&#xA;assignees: ''
+name: 🤔 Question
+about: Get help
+title: "question: "
+labels: question
+assignees: ""
+
+***
 
 <!-- Click "Preview" for a more readable version --
 
