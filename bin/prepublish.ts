@@ -2,11 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import parseArgs from 'minimist';
 
-interface IPrepublishArgs {
-    from: string;
-    to: string;
-}
-
 async function run(): Promise<void> {
     const {
         from = '.',
