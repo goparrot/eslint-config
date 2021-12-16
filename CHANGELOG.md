@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/goparrot/eslint-config/compare/v1.0.2...v1.0.3) (2021-12-16)
+
+### Bug Fixes
+
+*   turn off @typescript-eslint/no-unsafe-argument for less-strict ([8c6ee47](https://github.com/goparrot/eslint-config/commit/8c6ee47e1dfe2437bbdcaad62599414c550e99e3))
+
 ### [1.0.2](https://github.com/goparrot/eslint-config/compare/v1.0.1...v1.0.2) (2021-12-10)
 
 ### [1.0.2](https://github.com/goparrot/eslint-config/compare/v1.0.1...v1.0.2) (2021-12-07)
