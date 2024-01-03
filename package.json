@@ -88,6 +88,7 @@
     "devDependencies": {
         "@commitlint/cli": "^17.6.1",
         "@commitlint/config-conventional": "^17.6.1",
+        "@tsconfig/node18": "^18.2.2",
         "@types/node": "^16.18.24",
         "commitizen": "^4.3.0",
         "conventional-github-releaser": "^3.1.5",
