@@ -22,7 +22,6 @@ async function run(): Promise<void> {
         config,
         ...packageJson
     } = JSON.parse(fs.readFileSync(path.join(process.cwd(), `./${from}/package.json`)).toString());
-    delete packageJson.engines.npm;
 
     packageJson.main = './index.js';
     packageJson.typings = './index.d.ts';
