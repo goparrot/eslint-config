@@ -29,11 +29,6 @@
             "path": "cz-conventional-changelog"
         }
     },
-    "standard-version": {
-        "scripts": {
-            "postchangelog": "npm run remark"
-        }
-    },
     "scripts": {
         "commit": "git-cz",
         "prepare": "husky install",
@@ -47,16 +42,11 @@
         "lint:config:check": "eslint-config-prettier src/index.ts",
         "build": "rimraf dist/* && tsc -b tsconfig.build.json && ts-node -T bin/prepublish.ts",
         "typecheck": "tsc -p tsconfig.json --noEmit",
-        "remark": "remark README.md CHANGELOG.md CONTRIBUTING.md CODE_OF_CONDUCT.md .github/ -o -f -q && git add .",
-        "pre-commit": "git add . && run-p remark typecheck build && run-p format:staged && run-p lint",
+        "pre-commit": "git add . && run-p typecheck build && run-p format:staged && run-p lint",
         "prepublishOnly": "echo \"use 'npm run release:dev' or 'npm run version' and make PR to master branch, CD/CI will do the rest of the work\" && exit 1",
-        "publish": "npm run build && npm publish --registry=https://registry.npmjs.org ./dist",
-        "version": "standard-version --no-verify --skip.tag && git push origin && git push",
-        "version:dev": "standard-version --no-verify --prerelease dev --skip.changelog --skip.tag --skip.commit",
-        "release:local": "npm run build && yalc publish ./dist --push",
-        "release:dev": "npm run version:dev && npm run publish -- --tag dev",
-        "release:dev:dry": "npm run release:dev -- --dry-run",
-        "github-release": "conventional-github-releaser -p angular"
+        "publish:stable": "npm run build && ts-node bin/prepublish.ts && npm publish ./dist",
+        "publish:next": "npm version prerelease --no-git-tag-version --preid next && npm run publish:stable -- --tag next",
+        "publish:dry": "npm run publish:stable -- --dry-run"
     },
     "peerDependencies": {
         "eslint-plugin-react": "^7.0.0",
@@ -94,13 +84,7 @@
         "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
         "npm-run-all": "^4.1.5",
-        "remark-cli": "^12.0.0",
-        "remark-frontmatter": "^5.0.0",
-        "remark-github": "^12.0.0",
-        "remark-lint-emphasis-marker": "^3.1.2",
-        "remark-lint-strong-marker": "^3.1.2",
         "rimraf": "^5.0.5",
-        "standard-version": "^9.5.0",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.3"
     }
