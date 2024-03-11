@@ -38,7 +38,7 @@ jobs:
           echo "Version change found in commit ${{ steps.package-version.outputs.commit }}! New version: ${{ steps.package-version.outputs.version }} (${{ steps.package-version.outputs.type }})"
           git tag -f v${{ steps.package-version.outputs.version }} ${{ steps.package-version.outputs.commit }}
           git push origin v${{ steps.package-version.outputs.version }}
-          npm install --progress=false --loglevel=warn --ignore-scripts
+          npm ci
           npm run publish
           npm run github-release
         env:
