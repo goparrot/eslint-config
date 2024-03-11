@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -25,16 +25,16 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install npm dependencies
-        run: npm install --progress=false --loglevel=warn --ignore-scripts
+        run: npm ci --progress=false --loglevel=warn --ignore-scripts
 
       - name: Build dist
         run: npm run build
