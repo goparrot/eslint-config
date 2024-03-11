@@ -6,14 +6,14 @@ npm install --save-dev @goparrot/eslint-config
 
 Installed libraries out of the box:
 
-*   [eslint](https://github.com/eslint/eslint)
-*   [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
-*   [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
-*   [eslint-import-resolver-typescript](https://github.com/alexgorbatchev/eslint-import-resolver-typescript)
-*   [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
-*   [prettier](https://github.com/prettier/prettier)
-*   [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
-*   [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+- [eslint](https://github.com/eslint/eslint)
+- [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
+- [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
+- [eslint-import-resolver-typescript](https://github.com/alexgorbatchev/eslint-import-resolver-typescript)
+- [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
+- [prettier](https://github.com/prettier/prettier)
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+- [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
 
 ### Choose the right set of rules
 
@@ -91,5 +91,5 @@ test-reports
 
 ### Make sure to
 
-*   call the linter on the pre-commit hook
-*   configure `prettier` to be called automatically when saving a file in the [Webstorm](https://www.jetbrains.com/help/webstorm/prettier.html#ws_prettier_install) or [vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode#format-on-save)
+- call the linter on the pre-commit hook
+- configure `prettier` to be called automatically when saving a file in the [Webstorm](https://www.jetbrains.com/help/webstorm/prettier.html#ws_prettier_install) or [vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode#format-on-save)
