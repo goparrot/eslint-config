@@ -1,2 +1,3 @@
 # don't forget to add here all ignored folders or files from .gitignore that you don't need to check with a linter (there is no magic)
 dist
+CHANGELOG.md
