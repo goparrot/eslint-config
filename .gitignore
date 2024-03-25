@@ -1,7 +1,6 @@
 node_modules
 .history
 .idea
-package-lock.json
 .env
 .out
 !/bin
