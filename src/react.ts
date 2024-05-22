@@ -1,4 +1,6 @@
-export = {
+import type { Linter } from 'eslint';
+
+const config: Linter.Config = {
     extends: ['plugin:react/recommended'],
     plugins: ['react-hooks'],
     rules: {
@@ -14,3 +16,5 @@ export = {
         ],
     },
 };
+
+export = config;

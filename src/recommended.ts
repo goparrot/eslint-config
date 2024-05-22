@@ -1,4 +1,6 @@
-export = {
+import type { Linter } from 'eslint';
+
+const config: Linter.Config = {
     extends: ['./base'],
     rules: {
         radix: 'error',
@@ -40,3 +42,5 @@ export = {
         },
     ],
 };
+
+export = config;
