@@ -1,4 +1,6 @@
-export = {
+import type { Linter } from 'eslint';
+
+const config: Linter.Config = {
     rules: {
         'jsx-a11y/href-no-hash': 'off',
         'jsx-a11y/label-has-for': 'off',
@@ -9,3 +11,5 @@ export = {
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
     },
 };
+
+export = config;

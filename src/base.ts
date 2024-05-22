@@ -1,4 +1,6 @@
-export = {
+import type { Linter } from 'eslint';
+
+const config: Linter.Config = {
     root: true,
     env: {
         es6: true,
@@ -39,3 +41,5 @@ export = {
     ],
     plugins: ['@typescript-eslint', 'import', 'prettier'],
 };
+
+export = config;

@@ -1,4 +1,6 @@
-export = {
+import type { Linter } from 'eslint';
+
+const config: Linter.Config = {
     rules: {
         'no-empty': 'off',
         'no-unused-vars': 'off',
@@ -18,3 +20,5 @@ export = {
         '@typescript-eslint/ban-ts-comment': 'off',
     },
 };
+
+export = config;

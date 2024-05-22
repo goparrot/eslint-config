@@ -76,6 +76,7 @@
         "@commitlint/cli": "^19.2.1",
         "@commitlint/config-conventional": "^19.1.0",
         "@tsconfig/node18": "^18.2.3",
+        "@types/eslint": "^8.56.10",
         "@types/node": "^20.11.30",
         "commitizen": "^4.3.0",
         "conventional-github-releaser": "^3.1.5",
