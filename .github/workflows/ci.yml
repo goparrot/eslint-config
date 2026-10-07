@@ -8,7 +8,7 @@ on:
 
 jobs:
   commitlint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: ${{ github.actor != 'dependabot[bot]' }}
 
     steps:
@@ -21,7 +21,7 @@ jobs:
         uses: wagoid/commitlint-github-action@v5
 
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Git Checkout
